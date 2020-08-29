@@ -17,6 +17,7 @@ export class AppComponent {
   constructor(private corona:CoronaService){}
 
   isShow = false;
+  abled = true;
  
   toggleDisplay() {
     this.isShow = true;
@@ -26,6 +27,13 @@ export class AppComponent {
     this.isShow = false;
     this.country = "";
   }
+  disSelect(){
+    this.abled = false;
+  }
+  enSelect(){
+    this.abled = true;
+  }
+
   ngOnInit(){
     this.corona.getCountries().subscribe((data) => {
         this.countries=data;

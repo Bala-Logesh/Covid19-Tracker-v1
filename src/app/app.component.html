@@ -6,7 +6,7 @@
 
 <div class="content">
 <!-- Resources -->
-  <select (change)="getCountry($event.target.value)">
+  <select (change)="getCountry($event.target.value)" [disabled]="!abled">
     <option>Select a Country from the DropDown list</option>
     <option *ngFor="let country of countries" value="{{country.Slug}}">
       {{country.Country}}
@@ -14,12 +14,12 @@
   </select>
   
   <div class="card-container">
-    <button class="card" (click)="getCoronaData()" (click)="toggleDisplay()">
+    <button class="card" (click)="getCoronaData()" (click)="toggleDisplay()" (click)="disSelect()">
       <span class="title2">Get COVID 19 Data of <b>{{country}}</b></span>
     </button>
   </div>
   <div class="card-container">
-    <button class="card" (click)="toggleDisplayoff()">
+    <button class="card" (click)="toggleDisplayoff()" (click)="enSelect()">
       <span class="title2">Choose another Country</span>
     </button>
   </div>
@@ -36,6 +36,6 @@
   </div>   
   <ul>
     <li>Designed by Bala Logesh S</li>
-    <li style="float:right"><a target="_blank" rel="noopener" href="https://github.com/Bala-Logesh">Github Repository</a></li>
+    <li style="float:right"><a target="_blank" rel="noopener" href="https://github.com/Bala-Logesh/Covid19-Tracker">Github Repository</a></li>
   </ul>
 <router-outlet></router-outlet>
